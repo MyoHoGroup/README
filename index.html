@@ -11,44 +11,60 @@
             padding: 0;
             background-color: #f5f5f5;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         header {
             background-color: #003366;
             color: white;
             padding: 20px;
             text-align: center;
+            width: 100%;
         }
         header img {
-            width: 150px; /* Adjust the logo size */
+            width: 150px;
             margin-bottom: 15px;
         }
         nav {
             background-color: #139246;
             overflow: hidden;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
         }
         nav a {
-            float: left;
-            display: block;
+            display: inline-block;
             color: white;
-            text-align: center;
             padding: 14px 20px;
             text-decoration: none;
+            font-size: 18px;
         }
         nav a:hover {
             background-color: #E9BC0E;
         }
-        section {
-            padding: 50px;
-        }
-        .about, .services, .contact {
-            background-color: white;
+        .content-container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
             margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
+            align-items: center;
         }
-        .about img, .services img {
-            width: 100%;
+        .content-container img {
+            width: 50%;
             height: auto;
+            border-radius: 8px;
+        }
+        .text-content {
+            width: 45%;
+        }
+        section {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -57,6 +73,7 @@
             padding: 20px;
             background-color: #003366;
             color: white;
+            width: 100%;
         }
     </style>
 </head>
@@ -64,8 +81,6 @@
     <!-- Header Section -->
     <header>
         <img src="images/logos/myohogroup-logo.png" alt="Myo Ho Group Logo">
-        <h1>Myo Ho Group</h1>
-        <p>Innovating for a Greener, Smarter, and Sustainable Future</p>
     </header>
 
     <!-- Navigation Menu -->
@@ -77,55 +92,58 @@
     </nav>
 
     <!-- Home Section -->
-    <section id="home">
-        <h2>Welcome to Myo Ho Group</h2>
-        <p>At Myo Ho Group, we are dedicated to advancing sustainable energy, innovative real estate, strategic capital investment, and global trading. Our vision is to drive positive change through eco-friendly practices, cutting-edge technology, and meaningful partnerships.</p>
+    <div class="content-container">
         <img src="images/photos/home-banner.jpg" alt="Myo Ho Group - Home Banner">
-    </section>
+        <div class="text-content">
+            <h2>Welcome to Myo Ho Group</h2>
+            <p>At Myo Ho Group, we are dedicated to advancing sustainable energy, innovative real estate, strategic capital investment, and global trading.</p>
+        </div>
+    </div>
 
     <!-- About Us Section -->
-    <section id="about" class="about">
+    <section id="about">
         <h2>About Us</h2>
-        <p>We are a diversified group operating across **Green Energy**, **Realty**, **Capital**, and **Trading**. Our goal is to deliver top-tier solutions while minimizing environmental impact and enhancing social and economic outcomes.</p>
-        <img src="images/photos/about-us.jpg" alt="About Us - Myo Ho Group">
+        <div class="content-container">
+            <img src="images/photos/about-us.jpg" alt="About Us - Myo Ho Group">
+            <div class="text-content">
+                <p>We are a diversified group operating across <strong>Green Energy</strong>, <strong>Realty</strong>, <strong>Capital</strong>, and <strong>Trading</strong>. Our goal is to deliver top-tier solutions while minimizing environmental impact and enhancing social and economic outcomes.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Divisions Section -->
-    <section id="services" class="services">
+    <section id="services">
         <h2>Our Divisions</h2>
-        <h3>Green Energy</h3>
-        <p>Investing in renewable energy solutions like BioCNG, solar power, tyre pyrolysis and others to create a sustainable future.</p>
-
-        <h3>Realty</h3>
-        <p>Developing smart and eco-friendly infrastructure to transform urban spaces.</p>
-
-        <h3>Capital</h3>
-        <p>Offering strategic capital investments for growth and expansion of innovative projects.</p>
-
-        <h3>Trading</h3>
-        <p>Facilitating global trade with a focus on energy, technology, and sustainable commodities.</p>
-
-        <img src="images/photos/divisions.jpg" alt="Our Divisions">
+        <div class="content-container">
+            <div class="text-content">
+                <h3>Green Energy</h3>
+                <p>Investing in renewable energy solutions like BioCNG, solar power, tyre pyrolysis, and others.</p>
+                <h3>Realty</h3>
+                <p>Developing smart and eco-friendly infrastructure.</p>
+                <h3>Capital</h3>
+                <p>Offering strategic capital investments for growth.</p>
+                <h3>Trading</h3>
+                <p>Facilitating global trade in energy, technology, and sustainable commodities.</p>
+            </div>
+            <img src="images/photos/divisions.jpg" alt="Our Divisions">
+        </div>
     </section>
 
     <!-- Contact Us Section -->
-    <section id="contact" class="contact">
+    <section id="contact">
         <h2>Contact Us</h2>
-        <p>Have questions or need to get in touch? Reach out to us below:</p>
+        <p>Reach out to us below:</p>
         <p><strong>Email:</strong> info@myohogroup.com, hwm@myohogroup.com</p>
         <p><strong>Phone:</strong> +91 93260 57849, +91 98200 81777</p>
-        <p><strong>Address:</strong> 2 Prabhat Walji Ladha Road, Mulud West, Mumbai-80.</p>
-        <p><strong>Countries:</strong> India, Nigeria, and Dubai</p>
+        <p><strong>Address:</strong> 2 Prabhat Walji Ladha Road, Mulund West, Mumbai-80</p>
+        <p><strong>Countries:</strong> India, Nigeria, Dubai</p>
         <form>
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
-
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" required><br><br>
-
             <label for="message">Message:</label><br>
             <textarea id="message" name="message" rows="4" required></textarea><br><br>
-
             <button type="submit">Send Message</button>
         </form>
     </section>
